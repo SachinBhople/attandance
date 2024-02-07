@@ -53,9 +53,8 @@ exports.deleteStudent = asyncHandler(async (req, res) => {
 // attendance
 exports.getAttendance = asyncHandler(async (req, res) => {
     const { studId } = req.params
-    const result = await Attendance.find({ studentId: studId });
+    const result = await Attendance.find({ studId });
 
-    // const result = await Attendance.find(studId)
     res.status(200).json({ message: "Bacth Fetch Success", result })
 })
 exports.addAttendance = asyncHandler(async (req, res) => {
